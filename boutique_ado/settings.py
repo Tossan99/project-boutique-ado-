@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-d=%lrdy%m1slu^6px6k5-m&t*#5@_kpta3p1kx5&f1t(l1)zi(
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['8000-tossan99-projectboutiqu-xbu3dif8531.ws-eu108.gitpod.io', 'heroku.app']
+ALLOWED_HOSTS = ['8000-tossan99-projectboutiqu-wewv8olpdny.ws-eu108.gitpod.io', 'heroku.app']
 
 
 # Application definition
@@ -42,8 +42,7 @@ INSTALLED_APPS = [
     'allauth.socialaccount',
     'home',
     'products',
-    
-
+    'bag',
 ]
 
 MIDDLEWARE = [
@@ -73,6 +72,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'bag.contexts.bag_contents',
             ],
         },
     },
@@ -162,3 +162,6 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+FREE_DELIVERY_THRESHOLD = 50
+STANDARD_DELIVERY_PERCENTAGE = 10
